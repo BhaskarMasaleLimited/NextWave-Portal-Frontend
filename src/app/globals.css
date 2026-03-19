@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B4D3B;
+  --color-primary-light: #0D644D;
+  --color-primary-dark: #063125;
+  --color-accent: #D4920C;
+  --color-accent-light: #ECA823;
+  --color-cream: #FDF7EE;
+  --color-cream-dark: #F5EFE6;
+  --color-charcoal: #1C1C1C;
+  --color-warm-gray: #6B6B6B;
+  --color-soft-white: #FDF7EE;
+  --color-teal: #0B4D3B;
+  --color-teal-dark: #0B4D3B;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-charcoal);
+    background-color: var(--color-soft-white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-16;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:bg-white hover:text-primary hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .gradient-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-soft-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 50px;
+}
+
+/* Text shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, var(--color-accent) 0%, #fff 50%, var(--color-accent) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 5s ease-in-out 1.5s infinite;
+}
+
+/* Pulse glow for CTA */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(218, 165, 32, 0.4); }
+  50% { box-shadow: 0 0 20px 6px rgba(218, 165, 32, 0.15); }
+}
+
+.btn-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
