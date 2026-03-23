@@ -6,11 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "About Company", href: "#sourcing" },
-  { label: "Our Products", href: "#products" },
-  { label: "Collection", href: "#collection" },
-  { label: "Contact Us", href: "#newsletter" },
+  { label: "Home", href: "/#hero" },
+  { label: "About Company", href: "/#sourcing" },
+  { label: "All Products", href: "/products" },
+  { label: "Collection", href: "/#collection" },
+  { label: "Contact Us", href: "/#newsletter" },
 ];
 
 export default function Navbar() {
