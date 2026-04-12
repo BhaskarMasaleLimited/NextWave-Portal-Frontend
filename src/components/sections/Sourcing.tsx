@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { fadeInLeft, fadeInRight } from "@/lib/animations";
 
 const sourcingPoints = [
@@ -111,6 +112,21 @@ export default function Sourcing() {
                 </div>
               ))}
             </div>
+
+            <motion.div 
+              className="mt-10"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <Link href="/about" className="btn-primary inline-flex items-center gap-2 group px-8 py-3.5 rounded-full font-medium transition-transform hover:-translate-y-1 shadow-lg hover:shadow-primary/30">
+                Explore More
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>
