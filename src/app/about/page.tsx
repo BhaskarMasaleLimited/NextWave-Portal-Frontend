@@ -36,7 +36,7 @@ const timeline = [
     year: "1972",
     title: "The Beginning",
     description:
-      "Mr. Namdeo Mali and Mrs. Dropadabai Mali started a modest red chilli vendor business in Jalgaon, Maharashtra — planting the seeds of Bhaskar Foods.",
+      "Mr. Namdeo Mali and Mrs. Dropadabai Mali started a modest red chilli vendor business in Jalgaon, Maharashtra — planting the seeds of Bhaskar Masale.",
   },
   {
     year: "1985",
@@ -48,7 +48,7 @@ const timeline = [
     year: "1998",
     title: "State-Wide Distribution",
     description:
-      "Bhaskar Foods expanded across Maharashtra, building a trusted dealer network that brought authentic Khandeshi spices to households statewide.",
+      "Bhaskar Masale expanded across Maharashtra, building a trusted dealer network that brought authentic Khandeshi spices to households statewide.",
   },
   {
     year: "2005",
@@ -66,7 +66,7 @@ const timeline = [
     year: "Today",
     title: "A Legacy Lives On",
     description:
-      "Operating from D-46/1, MIDC, Jalgaon, Bhaskar Foods continues to supply 30+ premium spice products across India — with the same purity and passion since day one.",
+      "Operating from D-46/1, MIDC, Jalgaon, Bhaskar Masale continues to supply 30+ premium spice products across India — with the same purity and passion since day one.",
   },
 ];
 
@@ -154,7 +154,7 @@ export default function AboutPage() {
           {/* Background image */}
           <Image
             src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=2400&q=90"
-            alt="Bhaskar Foods spice heritage"
+            alt="Bhaskar Masale spice heritage"
             fill
             className="object-cover"
             priority
@@ -193,7 +193,7 @@ export default function AboutPage() {
               transition={{ delay: 0.7, duration: 0.7 }}
               className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed mb-10"
             >
-              From a small chilli stall in Jalgaon to a nationally recognised ISO-certified spice brand — this is the story of Bhaskar Foods.
+              From a small chilli stall in Jalgaon to a nationally recognised ISO-certified spice brand — this is the story of Bhaskar Masale.
             </motion.p>
 
             <motion.div
@@ -325,7 +325,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/sourcing.png"
-                    alt="Bhaskar Foods quality sourcing"
+                    alt="Bhaskar Masale quality sourcing"
                     fill
                     className="object-cover"
                   />
@@ -498,7 +498,7 @@ export default function AboutPage() {
               <div className="md:col-span-2 relative h-64 md:h-auto bg-gradient-to-br from-primary to-primary-dark">
                 <Image
                   src="/images/hero-spices.png"
-                  alt="Bhaskar Foods founders"
+                  alt="Bhaskar Masale founders"
                   fill
                   className="object-cover opacity-60 mix-blend-luminosity"
                 />
@@ -519,7 +519,7 @@ export default function AboutPage() {
                   With unwavering passion and deep knowledge of Khandeshi cuisine, this duo built more than a business — they built a legacy that now reaches kitchens across India.
                 </p>
                 <p className="text-warm-gray leading-relaxed">
-                  Their belief: that every family deserves the purest, most flavourful spices at their table — a belief that remains the cornerstone of Bhaskar Foods today.
+                  Their belief: that every family deserves the purest, most flavourful spices at their table — a belief that remains the cornerstone of Bhaskar Masale today.
                 </p>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">

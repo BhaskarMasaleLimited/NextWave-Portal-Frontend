@@ -12,10 +12,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) {
-    return { title: "Product Not Found — Bhaskar Foods" };
+    return { title: "Product Not Found — Bhaskar Masale" };
   }
   return {
-    title: `${product.name} — Bhaskar Foods`,
+    title: `${product.name} — Bhaskar Masale`,
     description: product.description,
   };
 }

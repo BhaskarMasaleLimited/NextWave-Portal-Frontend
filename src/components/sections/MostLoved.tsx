@@ -30,7 +30,7 @@ export default function MostLoved() {
             Most Loved in Indian Kitchens
           </h2>
           <p className="text-warm-gray max-w-xl mx-auto leading-relaxed">
-            The spices every Khandeshi home swears by — from Bhaskar Foods,
+            The spices every Khandeshi home swears by — from Bhaskar Masale,
             with uncompromising quality and flavour since 1972.
           </p>
         </motion.div>
@@ -43,7 +43,7 @@ export default function MostLoved() {
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6"
         >
-          {featured.map((product) => (
+          {featured.map((product, idx) => (
             <motion.div
               key={product.slug}
               variants={staggerItem}
@@ -52,19 +52,20 @@ export default function MostLoved() {
             >
               <Link
                 href={`/products/${product.slug}`}
-                className="block bg-white border border-black/5 rounded-2xl overflow-hidden shadow-md shadow-black/5 hover:shadow-xl hover:shadow-accent/10 transition-all duration-500"
+                className="block bg-white border border-black/5 rounded-2xl overflow-hidden shadow-md shadow-black/5 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/10 transition-all duration-500"
               >
                 {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-cream-dark to-cream">
+                <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-cream-dark to-cream border-b border-black/5">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain p-4 transition-transform duration-700 group-hover:scale-108"
                     sizes="(max-width: 768px) 50vw, 25vw"
+                    priority={idx < 4}
                   />
                   {product.badge && (
-                    <span className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-md shadow-sm border border-white/5">
                       {product.badge}
                     </span>
                   )}
@@ -76,16 +77,20 @@ export default function MostLoved() {
                     {product.name}
                   </h3>
                   <p className="text-warm-gray text-xs mb-3">{product.weight}</p>
-                  <div className="flex items-center gap-2">
-                    <span className="text-primary font-bold text-lg">
-                      {product.price}
-                    </span>
-                    {product.originalPrice && (
-                      <span className="text-warm-gray text-sm line-through">
-                        {product.originalPrice}
+                  {product.category === "Chilli Varieties" && product.spiceLevel && (
+                    <div className="flex items-center gap-1.5 mt-1">
+                      <span className="text-xs font-semibold text-warm-gray">Spice:</span>
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                        product.spiceLevel === "Low"
+                          ? "bg-green-100 text-green-700 border border-green-200"
+                          : product.spiceLevel === "Medium"
+                          ? "bg-amber-100 text-amber-700 border border-amber-200"
+                          : "bg-red-100 text-red-700 border border-red-200"
+                      }`}>
+                        {product.spiceLevel === "High" ? "🌶️🌶️🌶️ High" : product.spiceLevel === "Medium" ? "🌶️🌶️ Med" : "🌶️ Low"}
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </Link>
             </motion.div>

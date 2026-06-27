@@ -78,27 +78,26 @@ export default function OurCollection() {
                 href={`/products?category=${encodeURIComponent(cat.filter)}`}
                 className="block cursor-pointer"
               >
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4 shadow-lg shadow-black/5 transition-shadow duration-500 group-hover:shadow-xl group-hover:shadow-accent/10 bg-gradient-to-b from-cream-dark to-cream">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg shadow-black/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 bg-gradient-to-b from-cream-dark to-cream border border-black/5">
                   <Image
                     src={cat.image}
                     alt={cat.name}
                     fill
-                    className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain p-4 pb-20 transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                    <span className="bg-accent text-white text-xs font-semibold px-3 py-1.5 rounded-full inline-block text-center w-full">
-                      View Range →
-                    </span>
+                  
+                  {/* Glassmorphic bottom panel */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 pt-6 bg-gradient-to-t from-primary-dark/90 via-primary-dark/80 to-primary-dark/40 backdrop-blur-[6px] border-t border-white/10 transition-all duration-500 group-hover:from-primary-dark group-hover:via-primary-dark/95 group-hover:to-primary-dark/80">
+                    <h3 className="font-heading font-semibold text-white text-base lg:text-lg mb-1 flex items-center justify-between">
+                      {cat.name}
+                      <span className="text-accent group-hover:translate-x-1.5 transition-transform duration-300">➔</span>
+                    </h3>
+                    <p className="text-white/70 text-xs font-medium truncate">
+                      {cat.count}
+                    </p>
                   </div>
                 </div>
-                <h3 className="font-heading font-semibold text-charcoal text-base lg:text-lg text-center group-hover:text-primary transition-colors duration-300">
-                  {cat.name}
-                </h3>
-                <p className="text-warm-gray text-sm text-center mt-1">
-                  {cat.count}
-                </p>
               </Link>
             </motion.div>
           ))}

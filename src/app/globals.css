@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0B4D3B;
+  --color-primary: #073B2E;
   --color-primary-light: #0D644D;
-  --color-primary-dark: #063125;
-  --color-accent: #D4920C;
-  --color-accent-light: #ECA823;
-  --color-cream: #FDF7EE;
-  --color-cream-dark: #F5EFE6;
-  --color-charcoal: #1C1C1C;
-  --color-warm-gray: #6B6B6B;
-  --color-soft-white: #FDF7EE;
-  --color-teal: #0B4D3B;
-  --color-teal-dark: #0B4D3B;
+  --color-primary-dark: #04251D;
+  --color-accent: #D99414;
+  --color-accent-light: #F2AE2B;
+  --color-cream: #FAF6EE;
+  --color-cream-dark: #F0E9DC;
+  --color-charcoal: #1A1A1A;
+  --color-warm-gray: #707070;
+  --color-soft-white: #FAF6EE;
+  --color-teal: #073B2E;
+  --color-teal-dark: #073B2E;
 
   --font-heading: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
@@ -45,15 +45,38 @@
   }
 
   .btn-primary {
-    @apply bg-accent text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-accent text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer;
   }
 
   .btn-outline {
-    @apply border-2 border-white text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:bg-white hover:text-primary hover:-translate-y-0.5 active:translate-y-0;
+    @apply border-2 border-white text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-white hover:text-primary hover:-translate-y-0.5 active:translate-y-0 cursor-pointer;
   }
 
   .gradient-overlay {
-    @apply absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent;
+    @apply absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .glass-panel-dark {
+    background: rgba(7, 59, 46, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 

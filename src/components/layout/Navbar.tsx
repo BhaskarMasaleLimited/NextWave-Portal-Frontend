@@ -10,7 +10,7 @@ const navLinks = [
   { label: "About Company", href: "/#sourcing" },
   { label: "All Products", href: "/products" },
   { label: "Collection", href: "/#collection" },
-  { label: "Contact Us", href: "/#newsletter" },
+  { label: "Our Contact Details", href: "/#location" },
 ];
 
 export default function Navbar() {
@@ -39,22 +39,22 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-white/5 ${
         isScrolled
-          ? "bg-teal-dark/95 backdrop-blur-md shadow-xl shadow-teal-dark/20"
-          : "bg-teal-dark"
+          ? "bg-primary/80 backdrop-blur-lg shadow-xl shadow-primary-dark/30"
+          : "bg-primary/95"
       }`}
     >
       <div className="section-container section-padding">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center group py-2">
-            <div className="relative w-40 h-12 lg:w-48 lg:h-14">
+            <div className="relative w-40 h-13 sm:w-48 sm:h-15 lg:w-56 lg:h-18 bg-white/95 backdrop-blur-sm rounded-2xl border border-white/20 shadow-sm transition-all duration-300 group-hover:shadow-md">
               <Image
                 src="/logo/logo-hindi.svg"
-                alt="Bhaskar Foods Logo"
+                alt="Bhaskar Masale Logo"
                 fill
-                className="object-contain transition-transform duration-300 group-hover:scale-105 origin-left"
+                className="object-contain p-2 transition-transform duration-300 group-hover:scale-103 origin-center"
                 priority
               />
             </div>

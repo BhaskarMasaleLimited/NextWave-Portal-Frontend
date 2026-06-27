@@ -77,10 +77,10 @@ export default function WhyDifferent() {
             <motion.div
               key={feature.title}
               variants={staggerItem}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group bg-white border border-black/5 rounded-2xl p-6 lg:p-8 text-center shadow-md shadow-black/5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 cursor-default"
+              whileHover={{ y: -8 }}
+              className="group bg-[#FCF9F3] border border-black/5 rounded-2xl p-6 lg:p-8 text-center shadow-sm hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/10 hover:bg-[#FAF5EA] transition-all duration-500 cursor-default"
             >
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary mx-auto flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-400">
+              <div className="w-16 h-16 rounded-2xl bg-primary/5 text-primary mx-auto flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/15 transition-all duration-500">
                 {feature.icon}
               </div>
               <h3 className="font-heading font-semibold text-charcoal text-lg mb-2 group-hover:text-primary transition-colors">

@@ -115,7 +115,7 @@ function ProductsContent() {
           animate="visible"
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-6"
         >
-          {filtered.map((product) => (
+          {filtered.map((product, idx) => (
             <motion.div
               key={product.slug}
               variants={staggerItem}
@@ -134,6 +134,7 @@ function ProductsContent() {
                     fill
                     className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    priority={idx < 8}
                   />
                   {product.badge && (
                     <span className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
@@ -151,16 +152,20 @@ function ProductsContent() {
                     {product.name}
                   </h3>
                   <p className="text-warm-gray text-xs mb-2">{product.weight}</p>
-                  <div className="flex items-center gap-2">
-                    <span className="text-primary font-bold text-base">
-                      {product.price}
-                    </span>
-                    {product.originalPrice && (
-                      <span className="text-warm-gray text-xs line-through">
-                        {product.originalPrice}
+                  {product.category === "Chilli Varieties" && product.spiceLevel && (
+                    <div className="flex items-center gap-1.5 mt-1">
+                      <span className="text-xs font-semibold text-warm-gray">Spice:</span>
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                        product.spiceLevel === "Low"
+                          ? "bg-green-100 text-green-700 border border-green-200"
+                          : product.spiceLevel === "Medium"
+                          ? "bg-amber-100 text-amber-700 border border-amber-200"
+                          : "bg-red-100 text-red-700 border border-red-200"
+                      }`}>
+                        {product.spiceLevel === "High" ? "🌶️🌶️🌶️ High" : product.spiceLevel === "Medium" ? "🌶️🌶️ Med" : "🌶️ Low"}
                       </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </Link>
             </motion.div>

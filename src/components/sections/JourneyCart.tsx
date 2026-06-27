@@ -82,16 +82,16 @@ export default function JourneyCart() {
             >
               {/* Connector line (except last) */}
               {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-accent/40 to-accent/10" />
+                <div className="hidden lg:block absolute top-10 left-[65%] w-[70%] h-[2px] bg-gradient-to-r from-accent/40 to-transparent border-t-2 border-dashed border-accent/20" />
               )}
 
-              <div className="text-center">
+              <div className="text-center group-hover:-translate-y-2 transition-transform duration-500">
                 {/* Step number */}
                 <div className="relative inline-block mb-5">
-                  <div className="w-20 h-20 rounded-2xl bg-white shadow-lg shadow-primary/5 flex items-center justify-center text-primary mx-auto group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:shadow-xl group-hover:shadow-primary/20 group-hover:scale-110">
+                  <div className="w-20 h-20 rounded-2xl bg-white border border-black/5 shadow-md shadow-primary/5 flex items-center justify-center text-primary mx-auto group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:shadow-xl group-hover:shadow-primary/20 group-hover:scale-110">
                     {item.icon}
                   </div>
-                  <span className="absolute -top-2 -right-2 w-7 h-7 bg-accent text-white text-xs font-bold rounded-full flex items-center justify-center shadow-md">
+                  <span className="absolute -top-2 -right-2 w-7 h-7 bg-accent text-white text-xs font-bold rounded-full flex items-center justify-center shadow-md border border-white">
                     {item.step}
                   </span>
                 </div>

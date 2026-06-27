@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bhaskar Foods — Khandeshi Taste Makers Since 1972",
+  title: "Bhaskar Masale — Khandeshi Taste Makers Since 1972",
   description:
-    "Pure spices and food products by Bhaskar Foods, Jalgaon. Khandeshi taste makers since 1972. ISO 9001 certified. Over 30 premium spice products.",
+    "Pure spices and food products by Bhaskar Masale, Jalgaon. Khandeshi taste makers since 1972. ISO 9001 certified. Over 30 premium spice products.",
   keywords: [
-    "Bhaskar Foods",
     "Bhaskar Masale",
+    "Bhaskar Foods",
     "Khandeshi spices",
     "Indian spices",
     "chilli powder",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "ISO 9001 spices",
   ],
   openGraph: {
-    title: "Bhaskar Food — Pure Spices, Honest Ingredients, Real Flavour",
+    title: "Bhaskar Masale — Pure Spices, Honest Ingredients, Real Flavour",
     description:
       "Discover the finest Indian spices sourced directly from farms across India.",
     type: "website",

@@ -79,12 +79,12 @@ export default function Testimonials() {
             <motion.div
               key={t.name}
               variants={staggerItem}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 lg:p-8 hover:bg-white/10 transition-all duration-500"
+              whileHover={{ y: -6 }}
+              className="relative overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 lg:p-8 hover:bg-white/10 transition-all duration-500 shadow-lg shadow-black/10 hover:shadow-2xl hover:shadow-black/20"
             >
-              {/* Quote icon */}
+              {/* Large background Quote icon */}
               <svg
-                className="w-8 h-8 text-accent/40 mb-4"
+                className="absolute -top-2 -right-2 w-20 h-20 text-white/5 pointer-events-none select-none"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -93,16 +93,16 @@ export default function Testimonials() {
 
               <Stars count={t.rating} />
 
-              <p className="text-white/80 text-sm leading-relaxed mb-6 italic">
+              <p className="text-white/85 text-sm leading-relaxed mb-6 italic relative z-10">
                 &ldquo;{t.text}&rdquo;
               </p>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                <div className="w-10 h-10 rounded-full bg-accent/20 text-accent font-semibold flex items-center justify-center text-sm">
+              <div className="flex items-center gap-3 pt-4 border-t border-white/10 relative z-10">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-light text-white font-bold flex items-center justify-center text-sm shadow-md border border-white/10 select-none">
                   {t.initials}
                 </div>
                 <div>
-                  <p className="text-white font-medium text-sm">{t.name}</p>
+                  <p className="text-white font-semibold text-sm leading-none mb-1">{t.name}</p>
                   <p className="text-white/50 text-xs">{t.location}</p>
                 </div>
               </div>

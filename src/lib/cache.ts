@@ -140,7 +140,7 @@ export async function invalidatePattern(pattern: string): Promise<number> {
         count: 100,
       });
 
-      cursor = nextCursor;
+      cursor = Number(nextCursor);
 
       if (keys.length > 0) {
         // Pipeline bulk delete

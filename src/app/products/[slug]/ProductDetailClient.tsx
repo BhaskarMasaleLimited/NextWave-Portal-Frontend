@@ -105,28 +105,20 @@ export default function ProductDetailClient({ product, related }: Props) {
                 <p className="text-warm-gray text-lg mb-6">{product.nameHindi}</p>
               )}
 
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-primary font-bold text-3xl">
-                  {product.price}
-                </span>
-                {product.originalPrice && (
-                  <span className="text-warm-gray text-xl line-through">
-                    {product.originalPrice}
+              {product.category === "Chilli Varieties" && product.spiceLevel && (
+                <div className="flex items-center gap-3 mb-6 bg-cream/30 border border-black/5 p-4 rounded-2xl max-w-xs">
+                  <span className="text-sm font-semibold text-charcoal">Spice Level:</span>
+                  <span className={`text-sm font-bold px-3.5 py-1.5 rounded-full ${
+                    product.spiceLevel === "Low"
+                      ? "bg-green-100 text-green-700 border border-green-200"
+                      : product.spiceLevel === "Medium"
+                      ? "bg-amber-100 text-amber-700 border border-amber-200"
+                      : "bg-red-100 text-red-700 border border-red-200"
+                  }`}>
+                    {product.spiceLevel === "High" ? "🌶️🌶️🌶️ High Heat" : product.spiceLevel === "Medium" ? "🌶️🌶️ Medium Heat" : "🌶️ Low Heat"}
                   </span>
-                )}
-                {product.originalPrice && (
-                  <span className="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">
-                    Save{" "}
-                    {Math.round(
-                      ((parseInt(product.originalPrice.replace("₹", "")) -
-                        parseInt(product.price.replace("₹", ""))) /
-                        parseInt(product.originalPrice.replace("₹", ""))) *
-                        100
-                    )}
-                    %
-                  </span>
-                )}
-              </div>
+                </div>
+              )}
 
               <div className="mb-6">
                 <h3 className="text-charcoal font-semibold text-sm uppercase tracking-wider mb-2">
@@ -242,16 +234,20 @@ export default function ProductDetailClient({ product, related }: Props) {
                       <p className="text-warm-gray text-xs mb-2">
                         {rp.weight}
                       </p>
-                      <div className="flex items-center gap-2">
-                        <span className="text-primary font-bold text-base">
-                          {rp.price}
-                        </span>
-                        {rp.originalPrice && (
-                          <span className="text-warm-gray text-xs line-through">
-                            {rp.originalPrice}
+                      {rp.category === "Chilli Varieties" && rp.spiceLevel && (
+                        <div className="flex items-center gap-1.5 mt-1">
+                          <span className="text-xs font-semibold text-warm-gray">Spice:</span>
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                            rp.spiceLevel === "Low"
+                              ? "bg-green-100 text-green-700 border border-green-200"
+                              : rp.spiceLevel === "Medium"
+                              ? "bg-amber-100 text-amber-700 border border-amber-200"
+                              : "bg-red-100 text-red-700 border border-red-200"
+                          }`}>
+                            {rp.spiceLevel === "High" ? "🌶️🌶️🌶️ High" : rp.spiceLevel === "Medium" ? "🌶️🌶️ Med" : "🌶️ Low"}
                           </span>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
                   </Link>
                 </motion.div>

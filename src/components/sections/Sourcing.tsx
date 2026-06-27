@@ -51,25 +51,31 @@ export default function Sourcing() {
             viewport={{ once: true, amount: 0.3 }}
             className="relative"
           >
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+            {/* Dotted patterns */}
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[radial-gradient(var(--color-accent)_1.5px,transparent_1.5px)] [background-size:12px_12px] opacity-40 -z-10" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[radial-gradient(var(--color-primary)_1.5px,transparent_1.5px)] [background-size:12px_12px] opacity-30 -z-10" />
+
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-black/5">
               <Image
                 src="/images/sourcing.png"
                 alt="Spice sourcing from Indian farms"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-1000 hover:scale-103"
               />
               {/* Tag overlay */}
-              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg">
-                <p className="text-primary font-heading font-bold text-lg">
+              <div className="absolute bottom-6 left-6 bg-primary/95 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/10 text-white">
+                <p className="text-accent font-heading font-bold text-lg leading-none mb-1 tracking-wider">
                   SOURCING
                 </p>
-                <p className="text-warm-gray text-sm">
+                <p className="text-white/80 text-xs font-medium">
                   Direct from Indian farms
                 </p>
               </div>
             </div>
-            {/* Decorative accent */}
-            <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full rounded-3xl bg-accent/10" />
+            {/* Floating ISO Badge */}
+            <div className="absolute -top-4 -right-4 bg-accent text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-lg border border-white/10 rotate-6 animate-float cursor-default select-none">
+              🏆 ISO 9001:2015
+            </div>
           </motion.div>
 
           {/* Content */}
@@ -89,10 +95,10 @@ export default function Sourcing() {
             </h2>
             <p className="text-warm-gray text-base lg:text-lg leading-relaxed mb-8">
               Founded in 1972 by Mr. Namdeo Mali and Mrs. Dropadabai Mali,
-              Bhaskar Foods started as a local red chilli vendor and grew into
+              Bhaskar Masale started as a local red chilli vendor and grew into
               a fully automated, ISO 9001 certified company in Jalgaon,
               Maharashtra. With over 30 products, the name &apos;Bhaskar
-              Foods&apos; is synonymous with uncompromising quality and
+              Masale&apos; is synonymous with uncompromising quality and
               flavour.
             </p>
 

@@ -6,7 +6,6 @@ import MostLoved from "@/components/sections/MostLoved";
 import Sourcing from "@/components/sections/Sourcing";
 import WhyDifferent from "@/components/sections/WhyDifferent";
 import CookSomething from "@/components/sections/CookSomething";
-import JourneyCart from "@/components/sections/JourneyCart";
 import Testimonials from "@/components/sections/Testimonials";
 import Newsletter from "@/components/sections/Newsletter";
 import LocationMap from "@/components/sections/LocationMap";
@@ -22,7 +21,6 @@ export default function Home() {
         <Sourcing />
         <WhyDifferent />
         <CookSomething />
-        <JourneyCart />
         <Testimonials />
         <LocationMap />
         <Newsletter />
