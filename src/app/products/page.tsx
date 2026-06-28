@@ -124,20 +124,20 @@ function ProductsContent() {
             >
               <Link
                 href={`/products/${product.slug}`}
-                className="block bg-white border border-black/5 rounded-2xl overflow-hidden shadow-md shadow-black/5 hover:shadow-xl hover:shadow-accent/10 transition-all duration-500"
+                className="block bg-white border border-black/5 rounded-2xl overflow-hidden shadow-md shadow-black/5 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/10 transition-all duration-500"
               >
                 {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-cream-dark to-cream">
+                <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-cream-dark to-cream border-b border-black/5">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain p-4 transition-transform duration-700 group-hover:scale-108"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     priority={idx < 8}
                   />
                   {product.badge && (
-                    <span className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-md shadow-sm border border-white/5">
                       {product.badge}
                     </span>
                   )}

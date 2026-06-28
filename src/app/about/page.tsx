@@ -470,68 +470,65 @@ export default function AboutPage() {
         </section>
 
         {/* ── Founders ─────────────────────────────────────────────── */}
-        <section className="py-24 section-padding section-container">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            className="text-center mb-14"
-          >
-            <motion.div variants={fadeUp}>
-              <SectionLabel>The Founders</SectionLabel>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-charcoal">
-                Where It All Began
-              </h2>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            variants={scaleIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-5">
-              {/* Image */}
-              <div className="md:col-span-2 relative h-64 md:h-auto bg-gradient-to-br from-primary to-primary-dark">
-                <Image
-                  src="/images/hero-spices.png"
-                  alt="Bhaskar Masale founders"
-                  fill
-                  className="object-cover opacity-60 mix-blend-luminosity"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-primary/60" />
-                <div className="absolute bottom-6 left-6">
-                  <span className="text-accent font-heading font-bold text-5xl">1972</span>
+        <section className="py-24 lg:py-32 bg-white border-y border-black/5 w-full">
+          <div className="section-container section-padding">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              {/* Image Column */}
+              <motion.div
+                variants={scaleIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="lg:col-span-6 flex justify-center w-full"
+              >
+                <div className="relative w-full max-w-[550px] lg:max-w-none">
+                  <Image
+                    src="/Founder_images/Founder.jpeg"
+                    alt="Bhaskar Masale founders"
+                    width={700}
+                    height={840}
+                    className="rounded-3xl shadow-2xl border-2 border-accent/20 w-full h-auto object-contain"
+                    priority
+                  />
+                  <div className="absolute bottom-6 left-6 bg-primary/95 backdrop-blur-sm text-accent font-heading font-bold text-xl px-4 py-2 rounded-2xl border border-white/10 shadow-lg">
+                    Est. 1972
+                  </div>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Text */}
-              <div className="md:col-span-3 p-10">
-                <SectionLabel>Founded by</SectionLabel>
-                <h3 className="text-2xl font-heading font-bold text-charcoal mb-2">
-                  Mr. Namdeo Mali &amp;<br />Mrs. Dropadabai Mali
+              {/* Text Column */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="lg:col-span-6 flex flex-col justify-center"
+              >
+                <SectionLabel>The Founders</SectionLabel>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-charcoal leading-tight mb-6">
+                  Where It All Began
+                </h2>
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-primary mb-4">
+                  Mr. Namdeo Mali &amp; Mrs. Dropadabai Mali
                 </h3>
-                <div className="w-12 h-1 bg-accent rounded-full my-4" />
-                <p className="text-warm-gray leading-relaxed mb-4">
+                <div className="w-20 h-1 bg-accent rounded-full mb-6" />
+                <p className="text-warm-gray text-base sm:text-lg leading-relaxed mb-6">
                   With unwavering passion and deep knowledge of Khandeshi cuisine, this duo built more than a business — they built a legacy that now reaches kitchens across India.
                 </p>
-                <p className="text-warm-gray leading-relaxed">
+                <p className="text-warm-gray text-base sm:text-lg leading-relaxed mb-8">
                   Their belief: that every family deserves the purest, most flavourful spices at their table — a belief that remains the cornerstone of Bhaskar Masale today.
                 </p>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-                    <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-3 bg-cream/45 border border-black/5 p-4 rounded-2xl max-w-sm">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z" />
                     </svg>
                   </div>
-                  <span className="text-primary text-sm font-semibold">Jalgaon, Maharashtra, India</span>
+                  <span className="text-primary text-sm sm:text-base font-semibold">Jalgaon, Maharashtra, India</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* ── CTA ─────────────────────────────────────────────────── */}

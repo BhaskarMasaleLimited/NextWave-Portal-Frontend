@@ -211,18 +211,18 @@ export default function ProductDetailClient({ product, related }: Props) {
                 >
                   <Link
                     href={`/products/${rp.slug}`}
-                    className="block bg-white border border-black/5 rounded-2xl overflow-hidden shadow-md shadow-black/5 hover:shadow-xl hover:shadow-accent/10 transition-all duration-500"
+                    className="block bg-white border border-black/5 rounded-2xl overflow-hidden shadow-md shadow-black/5 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/10 transition-all duration-500"
                   >
-                    <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-cream-dark to-cream">
+                    <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-cream-dark to-cream border-b border-black/5">
                       <Image
                         src={rp.image}
                         alt={rp.name}
                         fill
-                        className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
+                        className="object-contain p-4 transition-transform duration-700 group-hover:scale-108"
                         sizes="(max-width: 768px) 50vw, 25vw"
                       />
                       {rp.badge && (
-                        <span className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        <span className="absolute top-3 left-3 bg-primary/90 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-md shadow-sm border border-white/5">
                           {rp.badge}
                         </span>
                       )}

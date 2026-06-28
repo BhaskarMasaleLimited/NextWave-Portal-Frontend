@@ -57,18 +57,18 @@ export default function Sourcing() {
 
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-black/5">
               <Image
-                src="/images/sourcing.png"
-                alt="Spice sourcing from Indian farms"
+                src="/Founder_images/Owner.jpeg"
+                alt="Bhaskar Masale owner"
                 fill
                 className="object-cover transition-transform duration-1000 hover:scale-103"
               />
               {/* Tag overlay */}
               <div className="absolute bottom-6 left-6 bg-primary/95 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/10 text-white">
                 <p className="text-accent font-heading font-bold text-lg leading-none mb-1 tracking-wider">
-                  SOURCING
+                  LEADERSHIP
                 </p>
                 <p className="text-white/80 text-xs font-medium">
-                  Direct from Indian farms
+                  Guiding our legacy of purity
                 </p>
               </div>
             </div>

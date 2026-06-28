@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -185,6 +185,17 @@ function renderIngredient(ingredient: string) {
 
 export default function CookSomething() {
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
+
+  useEffect(() => {
+    if (selectedRecipe) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedRecipe]);
 
   return (
     <section
